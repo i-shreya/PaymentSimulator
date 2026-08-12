@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: payment-simulator
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/payment_simulator}
+    username: ${DB_USERNAME:payment}
+    password: ${DB_PASSWORD:payment}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate.jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-me-change-me-change-me-change-me-change-me}
+    expiration: ${JWT_EXPIRATION:3600000}
+  payment:
+    processing-delay-min-ms: ${PAYMENT_PROCESSING_DELAY_MIN_MS:500}
+    processing-delay-max-ms: ${PAYMENT_PROCESSING_DELAY_MAX_MS:2000}
+  webhook:
+    max-retries: ${WEBHOOK_MAX_RETRIES:4}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

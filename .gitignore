@@ -1,0 +1,22 @@
+# Java / Maven
+target/
+*.class
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment files
+.env
+frontend/.env
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
